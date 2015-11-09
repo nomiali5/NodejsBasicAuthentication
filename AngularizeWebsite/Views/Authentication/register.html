@@ -1,0 +1,9 @@
+<form class="form-auth" ng-submit="register()">
+	<h2>Register</h2>
+	<p class="text-warning">{{error_message}}</p>
+	<input type="email" ng-model="user.email" placeholder="Email" class="form-control" required><br>
+	<input type="username" ng-model="user.username" placeholder="Username" class="form-control" required><br>
+	<input type="password" ng-model="user.password" placeholder="Password" class="form-control" required><br>
+	<select ng-init="user.role = roles[0].name" ng-model="user.role" ng-options="role.name as role.name for role in roles" class="form-control" required></select><br>
+	<input type="submit" value="Sign Up" class="btn btn-primary" />
+</form>

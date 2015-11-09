@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html ng-app="main">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width" />
+    <title>Super Application</title>
+    <link href="bootstrap.css" rel="stylesheet" />
+    <link href="Site.css" rel="stylesheet" />
+    <script src="modernizr-2.6.2.js"></script>
+    <script src="jquery-1.10.2.js"></script>
+    <script src="bootstrap.js"></script>
+    <script src="angular.js"></script>
+    <script src="angular-route.js"></script>
+    <script src="angular-ui-router.js"></script>
+    <script src="angular-resource.js"></script>
+    <script src="/Modules/mainApp.js"></script>
+    <script src="/Controllers/MainController.js"></script>
+    <script src="/Controllers/AuthController.js"></script>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#/home">Application name</a>
+            </div>
+            
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="#/home">Home</a></li>
+                    <li><a href="#/about">About</a></li>
+                    <li><a href="#/contact">Contact</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><p class="navbar-right navbar-text">Signed in as {{current_user}}</p></li>
+                    <li><p class="navbar-right navbar-text" ng-hide="authenticated">
+                        <a href="#/login">Login</a> or <a href="#/register">Register</a>
+                    </p></li>
+                    <li><p class="navbar-right navbar-text" ng-show="authenticated">
+                        <a href="#" ng-click="signout()">Logout</a>
+                    </p></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        <div ui-view>
+        </div>
+        <hr />
+        <footer>
+            <p>My ASP.NET Application</p>
+        </footer>
+    </div>
+</body>
+</html>
